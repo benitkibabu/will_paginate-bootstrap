@@ -28,7 +28,7 @@ module BootstrapPagination
       link_options = @options[:link_options] || {}
 
       if page == current_page
-        tag("li", tag("a", page, class: "page-link active"), class: "page-item active")
+        tag("li", tag("a", page, class: "page-link"), class: "page-item active")
       else
         tag("li", link(page, page, link_options.merge(rel: rel_value(page), class: "page-link")), class: "page-item")
       end
@@ -38,9 +38,9 @@ module BootstrapPagination
       link_options = @options[:link_options] || {}
 
       if page
-        tag("li", link(text, page, link_options), class: classname)
+        tag("li", link(text, page, link_options.merge(rel: rel_value(page), class: "page-link")), class: classname)
       else
-        tag("li", tag("span", text), class: "%s disabled" % classname)
+        tag("li", tag("a", text, class: "page-link"), class: "%s disabled" % classname)
       end
     end
 
