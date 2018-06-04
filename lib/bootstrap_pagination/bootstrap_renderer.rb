@@ -28,9 +28,9 @@ module BootstrapPagination
       link_options = @options[:link_options] || {}
 
       if page == current_page
-        tag("li", tag("span", page), class: "active")
+        tag("li", tag("span", page), class: "page-item active")
       else
-        tag("li", link(page, page, link_options.merge(rel: rel_value(page))))
+        tag("li", link(page, page, link_options.merge(rel: rel_value(page)), class: "page-link"), class: "page-item")
       end
     end
 
@@ -59,7 +59,7 @@ module BootstrapPagination
     end
 
     def ul_class
-      ["pagination", @options[:class]].compact.join(" ")
+      ["justify-content-center", @options[:class]].compact.join(" ")
     end
   end
 end
