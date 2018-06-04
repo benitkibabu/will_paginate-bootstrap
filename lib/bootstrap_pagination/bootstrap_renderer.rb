@@ -59,7 +59,7 @@ module BootstrapPagination
     end
 
     def ul_class
-      ["", @options[:class]].compact.join(" ")
+      ["justify-content-center", @options[:class]].compact.join(" ")
     end
   end
 end
