@@ -103,10 +103,10 @@ describe "Bootstrap Renderer" do
   end
 
   describe "when specifying a custom class" do
-    let(:class_opt) { "pagination-lg" }
+    let(:class_opt) { "justify-content-end" }
 
     it "applies the class to the ul" do
-      html.at_css("ul.pagination.pagination-lg").wont_be_nil
+      html.at_css("ul.pagination.justify-content-end").wont_be_nil
     end
   end
 
